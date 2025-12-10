@@ -19,6 +19,14 @@ import { notify } from './notifications';
 import { defaultOptions } from './notifications/default-options';
 import { updateNotification } from './notifications/update-notification';
 
+export interface NotificationOptions {
+  type: 'success' | 'warning' | 'error' | 'debug' | 'info' | 'spinner';
+  heading: string;
+  body?: string;
+  duration?: number;
+  clickToClose?: boolean;
+}
+
 export class Notification {
   private element: HTMLElement | null = null;
 
@@ -34,7 +42,7 @@ export class Notification {
     body = '',
     duration = defaultOptions.duration,
     clickToClose = defaultOptions.clickToClose
-  }) {
+  }: NotificationOptions) {
     this.type = type;
     this.heading = heading;
     this.body = body;
