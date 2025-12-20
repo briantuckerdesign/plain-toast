@@ -18,7 +18,7 @@ type DeepPartial<T> = {
  */
 export function validateAndMergeOptions(
   userOptions: any,
-  defaults: typeof config
+  _defaults: typeof config
 ): DeepPartial<typeof config> {
   // Implement your validation and merging logic here
   // This is a placeholder function to illustrate the concept

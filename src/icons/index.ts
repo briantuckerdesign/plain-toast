@@ -5,6 +5,7 @@ import { successIcon } from './success';
 import { getIcon } from './get-icon';
 import { warningIcon } from './warning';
 import { infoIcon } from './info';
+import { progressIcon } from './progress';
 
 // Thank you Radix UI for the icons! <3
 
@@ -16,6 +17,7 @@ export let icons = {
     error: errorIcon,
     debug: debugIcon,
     spinner: spinnerIcon,
-    info: infoIcon
+    info: infoIcon,
+    progress: progressIcon
   }
 };

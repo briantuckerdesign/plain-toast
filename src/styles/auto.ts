@@ -1,9 +1,3 @@
-import { darkStyles } from './dark';
-import { lightStyles } from './light';
+import autoCss from './auto.css?inline';
 
-export const autoStyles = `
-${lightStyles}
-@media (prefers-color-scheme: dark) {
-    ${darkStyles}
-}
-`;
+export const autoStyles = autoCss;

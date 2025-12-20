@@ -1,32 +1,68 @@
 {
-  "name": "vanilla-toast",
-  "version": "0.1.0",
+  "name": "just-toast",
+  "version": "1.0.0",
   "description": "Lightweight, accessible toast notifications with zero dependencies",
-  "keywords": ["toast", "notification", "vanilla", "javascript", "a11y", "accessible", "typescript"],
+  "keywords": [
+    "toast",
+    "notification",
+    "vanilla",
+    "javascript",
+    "a11y",
+    "accessible",
+    "typescript"
+  ],
   "license": "MIT",
-  "main": "src/main.ts",
-  "module": "src/main.ts",
+  "main": "./dist/just-toast.cjs.js",
+  "module": "./dist/just-toast.esm.js",
+  "browser": "./dist/just-toast.iife.js",
+  "types": "./dist/types/main.d.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types/main.d.ts",
+      "import": "./dist/just-toast.esm.js",
+      "require": "./dist/just-toast.cjs.js",
+      "browser": "./dist/just-toast.iife.js",
+      "default": "./dist/just-toast.esm.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/briantuckerdesign/vanilla-toast"
+    "url": "git+https://github.com/briantuckerdesign/just-toast"
   },
   "bugs": {
-    "url": "https://github.com/briantuckerdesign/vanilla-toast/issues"
+    "url": "https://github.com/briantuckerdesign/just-toast/issues"
   },
-  "homepage": "https://github.com/briantuckerdesign/vanilla-toast#readme",
+  "homepage": "https://github.com/briantuckerdesign/just-toast#readme",
   "author": "Brian Tucker",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
-    "watch": "concurrently \"bun run http-server dist -p 8080 -s\" \"bun run vite build --watch\"",
-    "build": "bun run vite build",
+    "watch": "concurrently \"bun run http-server dist -p 8080 -s\" \"bun run build --watch\"",
+    "build": "bun run build.ts",
     "dev": "bun run watch",
-    "format": "bun run prettier --write ."
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "format": "bun run prettier --write .",
+    "lint": "eslint src tests --ext .ts",
+    "prepublishOnly": "bun test && bun run build"
   },
   "devDependencies": {
+    "@types/bun": "^1.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.50.0",
+    "@typescript-eslint/parser": "^8.50.0",
     "concurrently": "^8.2.2",
+    "eslint": "^9.39.2",
+    "happy-dom": "^20.0.11",
     "http-server": "^14.1.1",
     "prettier": "^2.8.3",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.8"
+    "typescript": "^5.3.3"
   }
 }
