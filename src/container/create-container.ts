@@ -10,8 +10,8 @@ import type { Position } from '../types';
  */
 export function createContainer(position: Position = 'bottom-right'): HTMLElement {
   const container = document.createElement('div');
-  container.setAttribute('data-jt-container', '');
-  container.setAttribute('data-jt-position', position);
+  container.setAttribute('data-pt-container', '');
+  container.setAttribute('data-pt-position', position);
   container.setAttribute('role', 'region');
   container.setAttribute('aria-label', 'Toasts');
 
@@ -41,7 +41,7 @@ export function getOrCreateContainer(): HTMLElement {
   }
 
   // Check if a container already exists
-  const existing = document.querySelector('[data-jt-container]') as HTMLElement;
+  const existing = document.querySelector('[data-pt-container]') as HTMLElement;
   if (existing) return existing;
 
   // Create a new container with the configured position

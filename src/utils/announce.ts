@@ -12,13 +12,13 @@ export function announceToScreenReader(
 ): void {
   // Check if live region already exists
   let liveRegion = document.querySelector(
-    `[data-jt-sr-only][aria-live="${priority}"]`
+    `[data-pt-sr-only][aria-live="${priority}"]`
   ) as HTMLElement | null;
 
   // Create live region if it doesn't exist
   if (!liveRegion) {
     liveRegion = document.createElement('div');
-    liveRegion.setAttribute('data-jt-sr-only', '');
+    liveRegion.setAttribute('data-pt-sr-only', '');
     liveRegion.setAttribute('aria-live', priority);
     liveRegion.setAttribute('aria-atomic', 'true');
     liveRegion.setAttribute('role', 'status');

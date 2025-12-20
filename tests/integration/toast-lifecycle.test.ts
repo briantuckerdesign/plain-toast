@@ -8,8 +8,8 @@ describe('Toast Lifecycle', () => {
       heading: 'Success!'
     });
 
-    const toast = document.querySelector('[data-jt-toast]');
-    const container = document.querySelector('[data-jt-container]');
+    const toast = document.querySelector('[data-pt-toast]');
+    const container = document.querySelector('[data-pt-container]');
 
     expect(toast).not.toBeNull();
     expect(container).not.toBeNull();
@@ -22,11 +22,11 @@ describe('Toast Lifecycle', () => {
       heading: 'Info'
     });
 
-    expect(document.querySelector('[data-jt-toast]')).not.toBeNull();
+    expect(document.querySelector('[data-pt-toast]')).not.toBeNull();
 
     notification.close();
 
-    expect(document.querySelector('[data-jt-toast]')).toBeNull();
+    expect(document.querySelector('[data-pt-toast]')).toBeNull();
   });
 
   test('should update toast content after creation', () => {
@@ -35,7 +35,7 @@ describe('Toast Lifecycle', () => {
       heading: 'Processing...'
     });
 
-    let heading = document.querySelector('[data-jt-heading]');
+    let heading = document.querySelector('[data-pt-heading]');
     expect(heading?.textContent).toBe('Processing...');
 
     notification.update({
@@ -43,8 +43,8 @@ describe('Toast Lifecycle', () => {
       body: 'Task finished successfully'
     });
 
-    heading = document.querySelector('[data-jt-heading]');
-    const body = document.querySelector('[data-jt-body]');
+    heading = document.querySelector('[data-pt-heading]');
+    const body = document.querySelector('[data-pt-body]');
 
     expect(heading?.textContent).toBe('Complete!');
     expect(body?.textContent).toBe('Task finished successfully');
@@ -58,7 +58,7 @@ describe('Toast Lifecycle', () => {
     });
 
     // Check initial state
-    let progressBar = document.querySelector('[data-jt-progress-bar]') as HTMLElement;
+    let progressBar = document.querySelector('[data-pt-progress-bar]') as HTMLElement;
     expect(progressBar.style.width).toBe('0%');
 
     // Simulate progress updates
@@ -75,7 +75,7 @@ describe('Toast Lifecycle', () => {
     notification.complete(0);
     expect(progressBar.style.width).toBe('100%');
 
-    const body = document.querySelector('[data-jt-body]');
+    const body = document.querySelector('[data-pt-body]');
     expect(body?.textContent).toBe('100%');
   });
 
@@ -86,7 +86,7 @@ describe('Toast Lifecycle', () => {
       clickToClose: true
     });
 
-    const toast = document.querySelector('[data-jt-toast]') as HTMLElement;
+    const toast = document.querySelector('[data-pt-toast]') as HTMLElement;
 
     // Should be focusable
     expect(toast.getAttribute('tabindex')).toBe('0');
@@ -102,13 +102,13 @@ describe('Toast Lifecycle', () => {
       body: 'Something went wrong'
     });
 
-    const container = document.querySelector('[data-jt-container]');
-    const toast = document.querySelector('[data-jt-toast]');
-    const headingWrapper = document.querySelector('[data-jt-heading-wrapper]');
-    const icon = document.querySelector('[data-jt-icon]');
-    const heading = document.querySelector('[data-jt-heading]');
-    const body = document.querySelector('[data-jt-body]');
-    const progressBar = document.querySelector('[data-jt-progress-bar]');
+    const container = document.querySelector('[data-pt-container]');
+    const toast = document.querySelector('[data-pt-toast]');
+    const headingWrapper = document.querySelector('[data-pt-heading-wrapper]');
+    const icon = document.querySelector('[data-pt-icon]');
+    const heading = document.querySelector('[data-pt-heading]');
+    const body = document.querySelector('[data-pt-body]');
+    const progressBar = document.querySelector('[data-pt-progress-bar]');
 
     expect(container).not.toBeNull();
     expect(toast).not.toBeNull();

@@ -1,29 +1,29 @@
 /* Dark theme colors - WCAG AA compliant (4.5:1 contrast ratio for text) */
 :root {
-  --jt-background: var(--jt-slate-800);
-  --jt-text: var(--jt-slate-300);
-  --jt-heading: var(--jt-slate-50);
-  --jt-border: var(--jt-slate-700);
-  --jt-progress-bar: var(--jt-slate-500);
+  --pt-background: var(--pt-slate-800);
+  --pt-text: var(--pt-slate-300);
+  --pt-heading: var(--pt-slate-50);
+  --pt-border: var(--pt-slate-700);
+  --pt-progress-bar: var(--pt-slate-500);
 
-  --jt-success-icon: var(--jt-green-500);
-  --jt-success-border: var(--jt-green-600);
+  --pt-success-icon: var(--pt-green-500);
+  --pt-success-border: var(--pt-green-600);
 
-  --jt-error-icon: var(--jt-red-500);
-  --jt-error-border: var(--jt-red-500);
+  --pt-error-icon: var(--pt-red-500);
+  --pt-error-border: var(--pt-red-500);
 
-  --jt-warning-icon: var(--jt-yellow-500);
-  --jt-warning-border: var(--jt-yellow-400);
+  --pt-warning-icon: var(--pt-yellow-500);
+  --pt-warning-border: var(--pt-yellow-400);
 
-  --jt-info-icon: var(--jt-slate-400);
-  --jt-info-border: var(--jt-slate-700);
+  --pt-info-icon: var(--pt-slate-400);
+  --pt-info-border: var(--pt-slate-700);
 
-  --jt-debug-icon: var(--jt-blue-300);
-  --jt-debug-border: var(--jt-blue-600);
+  --pt-debug-icon: var(--pt-blue-300);
+  --pt-debug-border: var(--pt-blue-600);
 
-  --jt-spinner-icon: var(--jt-slate-400);
-  --jt-spinner-border: var(--jt-slate-400);
+  --pt-spinner-icon: var(--pt-slate-400);
+  --pt-spinner-border: var(--pt-slate-400);
 
-  --jt-progress-icon: var(--jt-blue-300);
-  --jt-progress-border: var(--jt-blue-600);
+  --pt-progress-icon: var(--pt-blue-300);
+  --pt-progress-border: var(--pt-blue-600);
 }

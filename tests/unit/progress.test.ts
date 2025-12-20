@@ -23,7 +23,7 @@ describe('Progress Toast', () => {
       progress: { total: 100 }
     });
 
-    const progressBar = document.querySelector('[data-jt-progress-bar]');
+    const progressBar = document.querySelector('[data-pt-progress-bar]');
     expect(progressBar).not.toBeNull();
   });
 
@@ -36,7 +36,7 @@ describe('Progress Toast', () => {
 
     notification.setProgress(50);
 
-    const progressBar = document.querySelector('[data-jt-progress-bar]') as HTMLElement;
+    const progressBar = document.querySelector('[data-pt-progress-bar]') as HTMLElement;
     expect(progressBar.style.width).toBe('50%');
   });
 
@@ -48,11 +48,11 @@ describe('Progress Toast', () => {
     });
 
     notification.incrementProgress(10);
-    let progressBar = document.querySelector('[data-jt-progress-bar]') as HTMLElement;
+    let progressBar = document.querySelector('[data-pt-progress-bar]') as HTMLElement;
     expect(progressBar.style.width).toBe('10%');
 
     notification.incrementProgress(15);
-    progressBar = document.querySelector('[data-jt-progress-bar]') as HTMLElement;
+    progressBar = document.querySelector('[data-pt-progress-bar]') as HTMLElement;
     expect(progressBar.style.width).toBe('25%');
   });
 
@@ -69,7 +69,7 @@ describe('Progress Toast', () => {
 
     notification.setProgress(75);
 
-    const body = document.querySelector('[data-jt-body]');
+    const body = document.querySelector('[data-pt-body]');
     expect(body?.textContent).toBe('75%');
   });
 
@@ -82,8 +82,8 @@ describe('Progress Toast', () => {
 
     notification.setProgress(150);
 
-    const progressBar = document.querySelector('[data-jt-progress-bar]') as HTMLElement;
-    const body = document.querySelector('[data-jt-body]');
+    const progressBar = document.querySelector('[data-pt-progress-bar]') as HTMLElement;
+    const body = document.querySelector('[data-pt-body]');
 
     expect(progressBar.style.width).toBe('100%');
     expect(body?.textContent).toBe('100%');
@@ -98,8 +98,8 @@ describe('Progress Toast', () => {
 
     notification.setProgress(-10);
 
-    const progressBar = document.querySelector('[data-jt-progress-bar]') as HTMLElement;
-    const body = document.querySelector('[data-jt-body]');
+    const progressBar = document.querySelector('[data-pt-progress-bar]') as HTMLElement;
+    const body = document.querySelector('[data-pt-body]');
 
     expect(progressBar.style.width).toBe('0%');
     expect(body?.textContent).toBe('0%');
@@ -114,8 +114,8 @@ describe('Progress Toast', () => {
 
     notification.complete(0); // No auto-close delay for testing
 
-    const progressBar = document.querySelector('[data-jt-progress-bar]') as HTMLElement;
-    const body = document.querySelector('[data-jt-body]');
+    const progressBar = document.querySelector('[data-pt-progress-bar]') as HTMLElement;
+    const body = document.querySelector('[data-pt-body]');
 
     expect(progressBar.style.width).toBe('100%');
     expect(body?.textContent).toBe('100%');
@@ -128,7 +128,7 @@ describe('Progress Toast', () => {
       progress: { total: 100 }
     });
 
-    const element = document.querySelector('[data-jt-toast]');
+    const element = document.querySelector('[data-pt-toast]');
     element?.addEventListener('vt:progress', (event: Event) => {
       const customEvent = event as CustomEvent;
       expect(customEvent.detail.current).toBe(50);
@@ -149,7 +149,7 @@ describe('Progress Toast', () => {
 
     notification.setProgress(5);
 
-    const body = document.querySelector('[data-jt-body]');
+    const body = document.querySelector('[data-pt-body]');
     expect(body?.textContent).toBe('50%');
   });
 });

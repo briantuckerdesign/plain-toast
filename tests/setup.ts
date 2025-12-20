@@ -24,10 +24,10 @@ afterEach(() => {
   document.body.innerHTML = '';
 
   // Remove any toast containers
-  const containers = document.querySelectorAll('[data-jt-container]');
+  const containers = document.querySelectorAll('[data-pt-container]');
   containers.forEach((container) => container.remove());
 
   // Remove any screen reader live regions
-  const liveRegions = document.querySelectorAll('[data-jt-sr-only]');
+  const liveRegions = document.querySelectorAll('[data-pt-sr-only]');
   liveRegions.forEach((region) => region.remove());
 });

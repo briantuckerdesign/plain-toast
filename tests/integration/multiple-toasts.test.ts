@@ -7,8 +7,8 @@ describe('Multiple Toasts', () => {
     new Toast({ type: 'info', heading: 'Info 1' });
     new Toast({ type: 'warning', heading: 'Warning 1' });
 
-    const toasts = document.querySelectorAll('[data-jt-toast]');
-    const containers = document.querySelectorAll('[data-jt-container]');
+    const toasts = document.querySelectorAll('[data-pt-toast]');
+    const containers = document.querySelectorAll('[data-pt-container]');
 
     expect(toasts.length).toBe(3);
     expect(containers.length).toBe(1); // Should reuse same container
@@ -19,10 +19,10 @@ describe('Multiple Toasts', () => {
     const notification2 = new Toast({ type: 'error', heading: 'Second' });
     const notification3 = new Toast({ type: 'info', heading: 'Third' });
 
-    const toasts = document.querySelectorAll('[data-jt-toast]');
+    const toasts = document.querySelectorAll('[data-pt-toast]');
     expect(toasts.length).toBe(3);
 
-    const headings = document.querySelectorAll('[data-jt-heading]');
+    const headings = document.querySelectorAll('[data-pt-heading]');
     const headingTexts = Array.from(headings).map((h) => h.textContent);
 
     expect(headingTexts).toContain('First');
@@ -35,13 +35,13 @@ describe('Multiple Toasts', () => {
     const notification2 = new Toast({ type: 'error', heading: 'Second' });
     const notification3 = new Toast({ type: 'info', heading: 'Third' });
 
-    expect(document.querySelectorAll('[data-jt-toast]').length).toBe(3);
+    expect(document.querySelectorAll('[data-pt-toast]').length).toBe(3);
 
     notification2.close();
 
-    expect(document.querySelectorAll('[data-jt-toast]').length).toBe(2);
+    expect(document.querySelectorAll('[data-pt-toast]').length).toBe(2);
 
-    const headings = document.querySelectorAll('[data-jt-heading]');
+    const headings = document.querySelectorAll('[data-pt-heading]');
     const headingTexts = Array.from(headings).map((h) => h.textContent);
 
     expect(headingTexts).toContain('First');
@@ -64,11 +64,11 @@ describe('Multiple Toasts', () => {
     });
 
     types.forEach((type) => {
-      const toast = document.querySelector(`[data-jt-${type}]`);
+      const toast = document.querySelector(`[data-pt-${type}]`);
       expect(toast).not.toBeNull();
     });
 
-    expect(document.querySelectorAll('[data-jt-toast]').length).toBe(types.length);
+    expect(document.querySelectorAll('[data-pt-toast]').length).toBe(types.length);
   });
 
   test('should handle multiple progress toasts', () => {
@@ -88,7 +88,7 @@ describe('Multiple Toasts', () => {
     download.setProgress(75);
 
     const progressBars = document.querySelectorAll(
-      '[data-jt-progress-bar]'
+      '[data-pt-progress-bar]'
     ) as NodeListOf<HTMLElement>;
     expect(progressBars.length).toBe(2);
 
@@ -107,11 +107,11 @@ describe('Multiple Toasts', () => {
       new Toast({ type: 'error', heading: '4' })
     ];
 
-    expect(document.querySelectorAll('[data-jt-toast]').length).toBe(4);
+    expect(document.querySelectorAll('[data-pt-toast]').length).toBe(4);
 
     toasts.forEach((toast) => toast.close());
 
-    expect(document.querySelectorAll('[data-jt-toast]').length).toBe(0);
+    expect(document.querySelectorAll('[data-pt-toast]').length).toBe(0);
   });
 
   test('should update multiple toasts independently', () => {
@@ -120,7 +120,7 @@ describe('Multiple Toasts', () => {
 
     toast1.update({ heading: 'Updated 1' });
 
-    const headings = document.querySelectorAll('[data-jt-heading]');
+    const headings = document.querySelectorAll('[data-pt-heading]');
     const texts = Array.from(headings).map((h) => h.textContent);
 
     expect(texts).toContain('Updated 1');

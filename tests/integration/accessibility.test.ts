@@ -22,14 +22,14 @@ describe('Accessibility', () => {
   test('toasts should have status role', () => {
     new Toast({ type: 'success', heading: 'Success' });
 
-    const toast = document.querySelector('[data-jt-toast]');
+    const toast = document.querySelector('[data-pt-toast]');
     expect(toast?.getAttribute('role')).toBe('status');
   });
 
   test('toasts should have aria-atomic', () => {
     new Toast({ type: 'info', heading: 'Info' });
 
-    const toast = document.querySelector('[data-jt-toast]');
+    const toast = document.querySelector('[data-pt-toast]');
     expect(toast?.getAttribute('aria-atomic')).toBe('true');
   });
 
@@ -40,7 +40,7 @@ describe('Accessibility', () => {
       clickToClose: true
     });
 
-    const toast = document.querySelector('[data-jt-toast]') as HTMLElement;
+    const toast = document.querySelector('[data-pt-toast]') as HTMLElement;
 
     // Should be focusable
     expect(toast.getAttribute('tabindex')).toBe('0');
@@ -59,7 +59,7 @@ describe('Accessibility', () => {
       clickToClose: false
     });
 
-    const toast = document.querySelector('[data-jt-toast]') as HTMLElement;
+    const toast = document.querySelector('[data-pt-toast]') as HTMLElement;
 
     // Should not have tabindex
     expect(toast.getAttribute('tabindex')).toBeNull();
@@ -70,7 +70,7 @@ describe('Accessibility', () => {
 
     announceToScreenReader('Test announcement', 'polite');
 
-    const liveRegion = document.querySelector('[data-jt-sr-only]');
+    const liveRegion = document.querySelector('[data-pt-sr-only]');
     expect(liveRegion).not.toBeNull();
     expect(liveRegion?.getAttribute('aria-live')).toBe('polite');
     expect(liveRegion?.getAttribute('role')).toBe('status');
@@ -81,7 +81,7 @@ describe('Accessibility', () => {
 
     announceToScreenReader('Hidden announcement', 'polite');
 
-    const liveRegion = document.querySelector('[data-jt-sr-only]') as HTMLElement;
+    const liveRegion = document.querySelector('[data-pt-sr-only]') as HTMLElement;
 
     expect(liveRegion.style.position).toBe('absolute');
     expect(liveRegion.style.left).toBe('-10000px');
@@ -96,9 +96,9 @@ describe('Accessibility', () => {
     announceToScreenReader('Polite message', 'polite');
     announceToScreenReader('Assertive message', 'assertive');
 
-    const politeRegion = document.querySelector('[data-jt-sr-only][aria-live="polite"]');
+    const politeRegion = document.querySelector('[data-pt-sr-only][aria-live="polite"]');
     const assertiveRegion = document.querySelector(
-      '[data-jt-sr-only][aria-live="assertive"]'
+      '[data-pt-sr-only][aria-live="assertive"]'
     );
 
     expect(politeRegion).not.toBeNull();
@@ -119,11 +119,11 @@ describe('Accessibility', () => {
         progress: type === 'progress' ? { total: 100 } : undefined
       });
 
-      const toast = document.querySelector('[data-jt-toast]');
+      const toast = document.querySelector('[data-pt-toast]');
 
       expect(toast?.getAttribute('role')).toBe('status');
       expect(toast?.getAttribute('aria-atomic')).toBe('true');
-      expect(toast?.hasAttribute(`data-jt-${type}`)).toBe(true);
+      expect(toast?.hasAttribute(`data-pt-${type}`)).toBe(true);
     });
   });
 
@@ -134,7 +134,7 @@ describe('Accessibility', () => {
       progress: { total: 100, showPercentage: true }
     });
 
-    const toast = document.querySelector('[data-jt-toast]');
+    const toast = document.querySelector('[data-pt-toast]');
     toast?.addEventListener('vt:progress', (event: Event) => {
       const customEvent = event as CustomEvent;
 
@@ -156,9 +156,9 @@ describe('Accessibility', () => {
       body: 'Operation completed'
     });
 
-    const toast = document.querySelector('[data-jt-toast]');
-    const heading = document.querySelector('[data-jt-heading]');
-    const body = document.querySelector('[data-jt-body]');
+    const toast = document.querySelector('[data-pt-toast]');
+    const heading = document.querySelector('[data-pt-heading]');
+    const body = document.querySelector('[data-pt-body]');
 
     // All key elements should exist
     expect(toast).not.toBeNull();

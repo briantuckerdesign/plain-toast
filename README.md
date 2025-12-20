@@ -192,7 +192,7 @@ const toast = new Toast({
   progress: { total: 100 }
 });
 
-document.querySelector('[data-jt-toast]').addEventListener('jt:progress', (event) => {
+document.querySelector('[data-pt-toast]').addEventListener('jt:progress', (event) => {
   console.log(`Progress: ${event.detail.percentage}%`);
 });
 ```
@@ -293,20 +293,20 @@ Customize colors using CSS variables:
 ```css
 :root {
   /* Base colors */
-  --jt-background: #ffffff;
-  --jt-text: #475569;
-  --jt-heading: #1e293b;
-  --jt-border: #e2e8f0;
+  --pt-background: #ffffff;
+  --pt-text: #475569;
+  --pt-heading: #1e293b;
+  --pt-border: #e2e8f0;
 
   /* Toast type colors */
-  --jt-success-icon: #16a34a;
-  --jt-success-border: #16a34a;
+  --pt-success-icon: #16a34a;
+  --pt-success-border: #16a34a;
 
-  --jt-error-icon: #ef4444;
-  --jt-error-border: #ef4444;
+  --pt-error-icon: #ef4444;
+  --pt-error-border: #ef4444;
 
-  --jt-warning-icon: #d97706;
-  --jt-warning-border: #facc15;
+  --pt-warning-icon: #d97706;
+  --pt-warning-border: #facc15;
 
   /* ... more variables */
 }
@@ -326,22 +326,22 @@ configure({
 Style elements with data attributes:
 
 ```css
-[data-jt-container] {
+[data-pt-container] {
   /* Container */
 }
-[data-jt-toast] {
+[data-pt-toast] {
   /* Toast */
 }
-[data-jt-toast][data-jt-success] {
+[data-pt-toast][data-pt-success] {
   /* Success toast, replace success with error, info, etc. */
 }
-[data-jt-heading] {
+[data-pt-heading] {
   /* Heading */
 }
-[data-jt-body] {
+[data-pt-body] {
   /* Body */
 }
-[data-jt-progress-bar] {
+[data-pt-progress-bar] {
   /* Progress bar */
 }
 ```

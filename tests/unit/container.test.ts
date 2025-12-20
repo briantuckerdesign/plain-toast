@@ -16,7 +16,7 @@ describe('Container', () => {
     const container = createContainer('bottom-right');
 
     expect(container).not.toBeNull();
-    expect(container.getAttribute('data-jt-container')).toBe('');
+    expect(container.getAttribute('data-pt-container')).toBe('');
   });
 
   test('should have ARIA attributes', () => {
@@ -38,7 +38,7 @@ describe('Container', () => {
     positions.forEach((position) => {
       document.body.innerHTML = ''; // Clear between tests
       const container = createContainer(position);
-      expect(container.getAttribute('data-jt-position')).toBe(position);
+      expect(container.getAttribute('data-pt-position')).toBe(position);
     });
   });
 
@@ -52,19 +52,19 @@ describe('Container', () => {
     const container2 = getOrCreateContainer();
 
     expect(container1).toBe(container2);
-    expect(document.querySelectorAll('[data-jt-container]').length).toBe(1);
+    expect(document.querySelectorAll('[data-pt-container]').length).toBe(1);
   });
 
   test('should use configured position', () => {
     configure({ position: 'top-left' });
     const container = getOrCreateContainer();
 
-    expect(container.getAttribute('data-jt-position')).toBe('top-left');
+    expect(container.getAttribute('data-pt-position')).toBe('top-left');
   });
 
   test('should use custom target element', () => {
     // Clear any existing containers first
-    document.querySelectorAll('[data-jt-container]').forEach((el) => el.remove());
+    document.querySelectorAll('[data-pt-container]').forEach((el) => el.remove());
 
     const customTarget = document.createElement('div');
     customTarget.id = 'custom-notifications';

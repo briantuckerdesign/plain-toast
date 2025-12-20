@@ -37,9 +37,9 @@ describe('Toast', () => {
       heading: 'Information'
     });
 
-    const element = document.querySelector('[data-jt-toast]');
+    const element = document.querySelector('[data-pt-toast]');
     expect(element).not.toBeNull();
-    expect(element?.getAttribute('data-jt-info')).toBe('');
+    expect(element?.getAttribute('data-pt-info')).toBe('');
   });
 
   test('should have ARIA attributes', () => {
@@ -48,7 +48,7 @@ describe('Toast', () => {
       heading: 'Success'
     });
 
-    const element = document.querySelector('[data-jt-toast]');
+    const element = document.querySelector('[data-pt-toast]');
     expect(element?.getAttribute('role')).toBe('status');
     expect(element?.getAttribute('aria-atomic')).toBe('true');
   });
@@ -60,8 +60,8 @@ describe('Toast', () => {
       body: 'Something went wrong'
     });
 
-    const heading = document.querySelector('[data-jt-heading]');
-    const body = document.querySelector('[data-jt-body]');
+    const heading = document.querySelector('[data-pt-heading]');
+    const body = document.querySelector('[data-pt-body]');
 
     expect(heading?.textContent).toBe('Error occurred');
     expect(body?.textContent).toBe('Something went wrong');
@@ -73,7 +73,7 @@ describe('Toast', () => {
       heading: 'Warning'
     });
 
-    const body = document.querySelector('[data-jt-body]') as HTMLElement;
+    const body = document.querySelector('[data-pt-body]') as HTMLElement;
     expect(body.style.display).toBe('none');
   });
 
@@ -96,7 +96,7 @@ describe('Toast', () => {
 
     expect(notification.clickToClose).toBe(true);
 
-    const element = document.querySelector('[data-jt-toast]') as HTMLElement;
+    const element = document.querySelector('[data-pt-toast]') as HTMLElement;
     expect(element.getAttribute('tabindex')).toBe('0');
     expect(element.style.cursor).toBe('pointer');
   });
@@ -112,8 +112,8 @@ describe('Toast', () => {
       body: 'All done'
     });
 
-    const heading = document.querySelector('[data-jt-heading]');
-    const body = document.querySelector('[data-jt-body]');
+    const heading = document.querySelector('[data-pt-heading]');
+    const body = document.querySelector('[data-pt-body]');
 
     expect(heading?.textContent).toBe('Complete!');
     expect(body?.textContent).toBe('All done');
@@ -125,10 +125,10 @@ describe('Toast', () => {
       heading: 'Info'
     });
 
-    expect(document.querySelector('[data-jt-toast]')).not.toBeNull();
+    expect(document.querySelector('[data-pt-toast]')).not.toBeNull();
 
     notification.close();
 
-    expect(document.querySelector('[data-jt-toast]')).toBeNull();
+    expect(document.querySelector('[data-pt-toast]')).toBeNull();
   });
 });

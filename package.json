@@ -1,6 +1,6 @@
 {
   "name": "plain-toast",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight, accessible toast notifications with zero dependencies",
   "keywords": [
     "toast",

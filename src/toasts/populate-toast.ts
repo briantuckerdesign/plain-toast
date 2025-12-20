@@ -21,8 +21,8 @@ export function populateToast(
 ): ToastElements {
   // Create main toast element
   const toast = document.createElement('div');
-  toast.setAttribute('data-jt-toast', toastId);
-  toast.setAttribute(`data-jt-${type}`, '');
+  toast.setAttribute('data-pt-toast', toastId);
+  toast.setAttribute(`data-pt-${type}`, '');
 
   // Add ARIA attributes for accessibility
   toast.setAttribute('role', 'status');
@@ -30,17 +30,17 @@ export function populateToast(
 
   // Create heading wrapper
   const headingWrapper = document.createElement('div');
-  headingWrapper.setAttribute('data-jt-heading-wrapper', '');
+  headingWrapper.setAttribute('data-pt-heading-wrapper', '');
 
   // Create icon element
   const iconElement = document.createElement('div');
-  iconElement.setAttribute('data-jt-icon', '');
-  iconElement.setAttribute(`data-jt-${type}`, '');
+  iconElement.setAttribute('data-pt-icon', '');
+  iconElement.setAttribute(`data-pt-${type}`, '');
   iconElement.innerHTML = icons.get(type);
 
   // Create heading element
   const headingElement = document.createElement('div');
-  headingElement.setAttribute('data-jt-heading', 'true');
+  headingElement.setAttribute('data-pt-heading', 'true');
   headingElement.textContent = heading;
 
   // Append icon and heading to wrapper
@@ -49,7 +49,7 @@ export function populateToast(
 
   // Create body element
   const bodyElement = document.createElement('div');
-  bodyElement.setAttribute('data-jt-body', '');
+  bodyElement.setAttribute('data-pt-body', '');
   bodyElement.textContent = body;
   if (!body) {
     bodyElement.style.display = 'none';
@@ -57,7 +57,7 @@ export function populateToast(
 
   // Create progress bar element
   const progressBar = document.createElement('div');
-  progressBar.setAttribute('data-jt-progress-bar', '');
+  progressBar.setAttribute('data-pt-progress-bar', '');
 
   // Append all elements to toast
   toast.appendChild(headingWrapper);
