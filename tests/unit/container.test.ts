@@ -4,9 +4,11 @@ import { configure, config } from '../../src/config';
 
 describe('Container', () => {
   beforeEach(() => {
-    // Reset config to defaults (but don't override target in specific tests)
+    // Reset config to defaults before each test
     configure({
-      position: 'bottom-right'
+      position: 'bottom-right',
+      ariaLive: 'polite',
+      target: undefined
     });
   });
 
