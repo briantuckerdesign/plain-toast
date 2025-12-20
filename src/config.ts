@@ -30,15 +30,15 @@ export interface Config {
 }
 
 export const config: Config = {
-  containerSelector: '[nu_notification-container]',
+  containerSelector: '[data-vt-container]',
   injectCss: true,
   classes: {
-    notificationClass: 'nu_notification',
-    headingWrapperClass: 'nu_notification-heading-wrapper',
-    iconClass: 'nu_notification-icon',
-    headingClass: 'nu_notification-heading',
-    bodyClass: 'nu_notification-body',
-    progressBarClass: 'nu_notification-progress-bar'
+    notificationClass: 'vt-toast',
+    headingWrapperClass: 'vt-heading-wrapper',
+    iconClass: 'vt-icon',
+    headingClass: 'vt-heading',
+    bodyClass: 'vt-body',
+    progressBarClass: 'vt-progress-bar'
   },
   icons: {
     success: icons.svg.success,

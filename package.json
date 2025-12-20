@@ -1,17 +1,26 @@
 {
-  "name": "notify-util",
-  "version": "1.1.5",
+  "name": "vanilla-toast",
+  "version": "0.1.0",
+  "description": "Lightweight, accessible toast notifications with zero dependencies",
+  "keywords": ["toast", "notification", "vanilla", "javascript", "a11y", "accessible", "typescript"],
+  "license": "MIT",
   "main": "src/main.ts",
   "module": "src/main.ts",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/briantuckerdesign/notification-util"
+    "url": "git+https://github.com/briantuckerdesign/vanilla-toast"
   },
+  "bugs": {
+    "url": "https://github.com/briantuckerdesign/vanilla-toast/issues"
+  },
+  "homepage": "https://github.com/briantuckerdesign/vanilla-toast#readme",
   "author": "Brian Tucker",
   "scripts": {
-    "watch": "concurrently \"http-server dist -p 8080 -s\" \"vite build --watch\"",
-    "build": "vite build"
+    "watch": "concurrently \"bun run http-server dist -p 8080 -s\" \"bun run vite build --watch\"",
+    "build": "bun run vite build",
+    "dev": "bun run watch",
+    "format": "bun run prettier --write ."
   },
   "devDependencies": {
     "concurrently": "^8.2.2",

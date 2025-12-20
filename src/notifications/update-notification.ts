@@ -5,12 +5,12 @@ export function updateNotification(notification, userOptions: object) {
 
   // Update the loader
   const headingElement = notification.querySelector(
-    '[nu_notification-heading]'
+    '[data-vt-heading]'
   );
   if (headingElement && heading) headingElement.innerHTML = heading;
 
   // Update the body
-  const bodyElement = notification.querySelector('[nu_notification-body]');
+  const bodyElement = notification.querySelector('[data-vt-body]');
 
   if (bodyElement && body) {
     bodyElement.innerHTML = body;

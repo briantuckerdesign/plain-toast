@@ -1,26 +1,26 @@
 export const darkStyles = `
 :root {
-  --nu--background: var(--nu-slate-800);
-  --nu--text: var(--nu-slate-300);
-  --nu--heading: var(--nu-slate-50);
-  --nu--border: var(--nu-slate-700);
-  --nu-progress-bar: var(--nu-slate-500);
+  --vt--background: var(--vt-slate-800);
+  --vt--text: var(--vt-slate-300);
+  --vt--heading: var(--vt-slate-50);
+  --vt--border: var(--vt-slate-700);
+  --vt-progress-bar: var(--vt-slate-500);
 
-  --nu-success-icon: var(--nu-green-500);
-  --nu-success-border: var(--nu-green-600);
+  --vt-success-icon: var(--vt-green-500);
+  --vt-success-border: var(--vt-green-600);
 
-  --nu-error-icon: var(--nu-red-500);
-  --nu-error-border: var(--nu-red-500);
+  --vt-error-icon: var(--vt-red-500);
+  --vt-error-border: var(--vt-red-500);
 
-  --nu-warning-icon: var(--nu-yellow-500);
-  --nu-warning-border: var(--nu-yellow-400);
+  --vt-warning-icon: var(--vt-yellow-500);
+  --vt-warning-border: var(--vt-yellow-400);
 
-  --nu-info-icon: var(--nu-slate-400);
-  --nu-info-border: var(--nu-slate-700);
+  --vt-info-icon: var(--vt-slate-400);
+  --vt-info-border: var(--vt-slate-700);
 
-  --nu-debug-icon: var(--nu-blue-300);
-  --nu-debug-border: var(--nu-blue-600);
+  --vt-debug-icon: var(--vt-blue-300);
+  --vt-debug-border: var(--vt-blue-600);
 
-  --nu-spinner-icon: var(--nu-slate-400);
-  --nu-spinner-border: var(--nu-slate-400);
+  --vt-spinner-icon: var(--vt-slate-400);
+  --vt-spinner-border: var(--vt-slate-400);
 }`;

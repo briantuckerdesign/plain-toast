@@ -22,18 +22,18 @@ export function populateNotification(container, type, heading, body, notificatio
   } = config.classes;
 
   const notificationToInject = `
-<div nu_notification="${notificationId}" class="${notificationClass} is-${type}" >
-  <div nu_heading-wrapper class="${headingWrapperClass}">
-    <div nu_notification-icon class="${iconClass} is-${type}"">${icons.get(type)}</div>
-    <div nu_notification-heading="true" class="${headingClass}">${heading}</div>
+<div data-vt-toast="${notificationId}" class="${notificationClass} is-${type}" >
+  <div data-vt-heading-wrapper class="${headingWrapperClass}">
+    <div data-vt-icon class="${iconClass} is-${type}"">${icons.get(type)}</div>
+    <div data-vt-heading="true" class="${headingClass}">${heading}</div>
   </div>
-  <div nu_notification-body class="${bodyClass}">${body}</div>
-  <div nu_notification-progress-bar class="${progressBarClass}"></div>
+  <div data-vt-body class="${bodyClass}">${body}</div>
+  <div data-vt-progress-bar class="${progressBarClass}"></div>
 </div>`;
 
   container.insertAdjacentHTML('beforeend', notificationToInject);
-  const notification = container.querySelector(`[nu_notification="${notificationId}"]`);
-  const bodyElement = notification.querySelector('[nu_notification-body]');
+  const notification = container.querySelector(`[data-vt-toast="${notificationId}"]`);
+  const bodyElement = notification.querySelector('[data-vt-body]');
   if (!body) bodyElement.style.display = 'none';
 
   return notification;

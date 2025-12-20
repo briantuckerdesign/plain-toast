@@ -11,10 +11,10 @@ export function closeNotification(notification, duration) {
 
   if (duration > 0) {
     const progressElement = notification.querySelector(
-      '[nu_notification-progress-bar]'
+      '[data-vt-progress-bar]'
     );
     if (progressElement) {
-      progressElement.style.animationName = 'nu_progress-bar';
+      progressElement.style.animationName = 'vt-progress-bar';
       progressElement.style.animationDuration = `${duration}ms`;
       progressElement.style.animationTimingFunction = 'linear';
       progressElement.style.animationFillMode = 'forwards'; // Keeps the state at the end of the animation
@@ -58,10 +58,10 @@ export function closeNotification(notification, duration) {
 // export function closeNotification(notification, duration) {
 //   if (duration > 0) {
 //     const progressElement = notification.querySelector(
-//       '[nu_notification-progress-bar]'
+//       '[data-vt-progress-bar]'
 //     );
 //     if (progressElement) {
-//       progressElement.style.animationName = 'nu_progress-bar';
+//       progressElement.style.animationName = 'vt-progress-bar';
 //       progressElement.style.animationDuration = `${duration}ms`;
 //       progressElement.style.animationTimingFunction = 'linear';
 //       progressElement.style.animationFillMode = 'forwards'; // Keeps the state at the end of the animation
