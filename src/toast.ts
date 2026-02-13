@@ -81,10 +81,13 @@ export class Toast {
   /**
    * Updates the progress bar to the specified value
    * @param current - The current progress value (0 to total)
+   * @param progressOptions - Update the options for the progress bar
    */
-  setProgress(current: number): void {
-    if (!this.elements || this.type !== 'progress' || !this.progressOptions)
-      return;
+  setProgress(current: number, progressOptions?: ProgressOptions): void {
+    if (!this.elements || this.type !== 'progress' || !this.progressOptions) return;
+
+    if (progressOptions)
+      this.progressOptions = { ...this.progressOptions, ...progressOptions };
 
     const { progressBar, bodyElement, toast } = this.elements;
 
